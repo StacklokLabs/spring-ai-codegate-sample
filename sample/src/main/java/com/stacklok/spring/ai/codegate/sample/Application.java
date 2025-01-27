@@ -4,11 +4,7 @@ import java.util.Scanner;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
-import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
-import org.springframework.ai.reader.pdf.PagePdfDocumentReader;
-import org.springframework.ai.transformer.splitter.TokenTextSplitter;
-import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,22 +21,22 @@ public class Application {
 
 	@Bean	
 	public CommandLineRunner cli(@Value("classpath:wikipedia-hurricane-milton-page.pdf") Resource hurricaneDocs,
-			ChatClient.Builder chatClientBuilder, VectorStore vectorStore) {
+			ChatClient.Builder chatClientBuilder) {
 
 		return args -> {
 
 			// 1. Load the hurricane documents in vector store
-			vectorStore.add(new TokenTextSplitter().split(new PagePdfDocumentReader(hurricaneDocs).read()));
+			//vectorStore.add(new TokenTextSplitter().split(new PagePdfDocumentReader(hurricaneDocs).read()));
 
 			// 2. Create the ChatClient with chat memory and RAG support
 			var chatClient = chatClientBuilder
 				.defaultSystem("I'm your privacy specialist.  Let's go! ") // Set the system prompt
 				.defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory())) // Enable chat memory
-				.defaultAdvisors(new QuestionAnswerAdvisor(vectorStore)) // Enable RAG
+				//.defaultAdvisors(new QuestionAnswerAdvisor(vectorStore)) // Enable RAG
 				.build();
 
 			// 3. Start the chat loop
-			System.out.println("\nI am your Hurricane Milton assistant.\n");
+			System.out.println("\nI am your privacy assitant.\n");
 			try (Scanner scanner = new Scanner(System.in)) {
 				while (true) {
 					System.out.print("\nUSER: ");
