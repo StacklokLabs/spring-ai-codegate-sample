@@ -41,9 +41,11 @@ public class Application {
 				while (true) {
 					System.out.print("\nUSER: ");
 					System.out.println("\nASSISTANT: " + 
-						chatClient.prompt(scanner.nextLine()) // Get the user input
+						chatClient.prompt(scanner.nextLine())
+						 // Read commqne line the user input
 							.call()
 							.content());
+						
 				}
 			}
 		};
