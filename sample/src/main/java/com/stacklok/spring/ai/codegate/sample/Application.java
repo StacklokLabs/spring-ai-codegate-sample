@@ -20,7 +20,7 @@ public class Application {
 	}
 
 	@Bean	
-	public CommandLineRunner cli(@Value("classpath:wikipedia-hurricane-milton-page.pdf") Resource hurricaneDocs,
+	public CommandLineRunner cli(@Value("classpath:senstive-contact-test-data.pdf") Resource senstiveTestData,
 			ChatClient.Builder chatClientBuilder) {
 
 		return args -> {
