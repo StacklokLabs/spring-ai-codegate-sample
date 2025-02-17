@@ -8,7 +8,7 @@ This project is an expiremental application that integrates [Spring AI](https://
 - **OpenAI Integration**: Utilizes OpenAI's GPT-4 models for generating high-quality answers through a Spring Boot service layer.
 - **Privacy Focus**: The application is designed to operate with a strong emphasis on user privacy and data security leveraging CodeGate.
 
-## Sequence Diagram (Mermaid)
+## Application Flow 
 
 ```mermaid
 sequenceDiagram
@@ -16,14 +16,19 @@ sequenceDiagram
     participant A as Application
     participant O as OpenAIService
     participant C as ChatClient
+    participant G as CodeGate
+    participant AI as OpenAI
 
     U->>A: Start CLI interaction
     A->>U: Prompt for input
     U->>A: User enters question
     A->>O: getAnswer(question)
     O->>C: chatClient.prompt().user(question)
-    C->>O: Call OpenAI API
-    C-->>O: Response from OpenAI
+    C->>G: Call OpenAI API via CodeGate.privacyCheck()
+    G->>AI: Call OpenAI API
+    AI-->>G: Response from OpenAI
+    G-->>C: Response from OpenAI
+    C-->>O: Return response to ChatClient
     O-->>A: Return response to Application
     A-->>U: Display response to User
 ```
