@@ -2,7 +2,7 @@
 <img src="sample/src/main/resources/img.jpeg" alt="AI Image" width="800" height="400">
 
 ---
-# ✨ Spring AI CLI application integrated with CodeGate for Privacy
+# ✨ Spring AI app with AI Privacy Gateway via CodeGate
 This project is an expiremental application that integrates [Spring AI](https://spring.io/projects/spring-ai) (Java AI Framework) and [Codegate](https://github.com/stacklok/codegate) (transparent AI gateway providing Personally identifiable information protection). Spring Boot-based chat application leverages OpenAI's API for generating responses to user prompts while CodeGate ensures senstive information (e.g. email address, credit cards) aren't sent to OpenAI. 
 
 Additional Learning Resources:
