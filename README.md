@@ -1,8 +1,7 @@
 
 
-# Project Overview: AI Chat Application with OpenAI Integration
-
-This project is a Spring Boot-based chat application that leverages OpenAI's API for generating responses to user prompts. The system supports both interactive and streaming interfaces, allowing users to engage in natural conversations or receive real-time streamed responses.
+# Project Overview: Spring AI CLI application with PII (Personally identifiable information) Protection
+This project is an expiremental application that integrates [Spring AI](https://spring.io/projects/spring-ai) (Java AI Framework) and [Codegate](https://github.com/stacklok/codegate) (transparent AI gateway providing PII protection). Spring Boot-based chat application leverages OpenAI's API for generating responses to user prompts while CodeGate ensures senstive information (e.g. email address, credit cards) aren't sent to OpenAI. 
 
 ## Functionality Summary
 - **Interactive Chat**: Users can input questions or commands via the console, receiving formatted responses from an AI assistant.
