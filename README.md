@@ -6,12 +6,12 @@ This project is an expiremental application that integrates [Spring AI](https://
 
 Additional Learning Resources:
  - CodeGate Resources:
-[Website](https://codegate.ai) | [Documentation](https://docs.codegate.ai) |
+[GitHub Repository](https://github.com/stacklok/codegate) | [Documentation](https://docs.codegate.ai) |
 [YouTube](https://www.youtube.com/playlist?list=PLYBL38zBWVIhrDgKwAMjAwOYZeP-ZH64n)
 | [Discord](https://discord.gg/stacklok)
 
  - Spring AI Resources:
-[Website](https://spring.io/projects/spring-ai) | [Documentation](https://docs.spring.io/spring-ai/reference/)
+[GitHub Repository](https://github.com/spring-projects/spring-ai) | [Documentation](https://docs.spring.io/spring-ai/reference/)
 
 ---
 ## Functionality Summary
