@@ -33,12 +33,6 @@ sequenceDiagram
     A-->>U: Display response to User
 ```
 
-### Component Interactions
-1. **User** sends a message to the `ChatController`.
-2. **ChatController** processes the request and delegates it to `OpenAIServiceImpl`.
-3. `OpenAIServiceImpl` uses `ChatClient` to generate an AI response.
-4. The response is sent back to the user via the console or stream.
-
 ## Getting Started
 
 Follow these steps to clone and run this project locally:
