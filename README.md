@@ -1,6 +1,6 @@
 
 
-# Project Overview: Spring AI CLI application with PII (Personally identifiable information) Protection
+#  Spring AI CLI application with PII (Personally identifiable information) Protection with CodeGate
 This project is an expiremental application that integrates [Spring AI](https://spring.io/projects/spring-ai) (Java AI Framework) and [Codegate](https://github.com/stacklok/codegate) (transparent AI gateway providing PII protection). Spring Boot-based chat application leverages OpenAI's API for generating responses to user prompts while CodeGate ensures senstive information (e.g. email address, credit cards) aren't sent to OpenAI. 
 
 ## Functionality Summary
