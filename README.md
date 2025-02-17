@@ -118,7 +118,7 @@ Note: You will need to be running CodeGate version v0.1.18 or greater to leverag
 
 To see the privacy feature in action. attempt to send an email address and watch CodeGate redact the email address before sending the request to OpenAI:
 ```bash
-User: Who is test.sender@example.com
+ Who is test.sender@example.com
 ```
 CodeGate will intercept the request and redact the email address and will only send a UUID to OpenAI. You should receive the following response:
 ```bash
