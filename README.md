@@ -4,20 +4,28 @@
 This project is an expiremental application that integrates [Spring AI](https://spring.io/projects/spring-ai) (Java AI Framework) and [Codegate](https://github.com/stacklok/codegate) (transparent AI gateway providing Personally identifiable information protection). Spring Boot-based chat application leverages OpenAI's API for generating responses to user prompts while CodeGate ensures senstive information (e.g. email address, credit cards) aren't sent to OpenAI. 
 
 ## Functionality Summary
-- **Interactive Chat**: Users can input questions or commands via the console, receiving formatted responses from an AI assistant.
-- **Streaming capability**: Enables continuous output of AI responses as they are generated, enhancing user interaction flow.
-- **Integration with OpenAI**: Utilizes OpenAI's GPT-4 models for generating high-quality answers through a Spring Boot service layer.
+- **Interactive Chat**: Users can input questions or commands via the console and receive formatted responses from an AI assistant.
+- **OpenAI Integration**: Utilizes OpenAI's GPT-4 models for generating high-quality answers through a Spring Boot service layer.
+- **Privacy Focus**: The application is designed to operate with a strong emphasis on user privacy and data security leveraging CodeGate.
 
 ## Sequence Diagram (Mermaid)
 
 ```mermaid
-graph LR
-    A[User] --> C[ChatController]
-    C --> S[OpenAIServiceImpl]
-    S --> ChatClient
-    C <-- response --> S
-    C --> D[Application]
-    D --> S
+sequenceDiagram
+    participant U as User
+    participant A as Application
+    participant O as OpenAIService
+    participant C as ChatClient
+
+    U->>A: Start CLI interaction
+    A->>U: Prompt for input
+    U->>A: User enters question
+    A->>O: getAnswer(question)
+    O->>C: chatClient.prompt().user(question)
+    C->>O: Call OpenAI API
+    C-->>O: Response from OpenAI
+    O-->>A: Return response to Application
+    A-->>U: Display response to User
 ```
 
 ### Component Interactions
@@ -28,38 +36,57 @@ graph LR
 
 ## Getting Started
 
-### 1. Clone the Repository
+Follow these steps to clone and run this project locally:
+
+### Prerequisites
+
+- Java 17 or higher
+- Maven 
+- An OpenAI API key
+
+### Clone the repository
+
 ```bash
-git clone https://github.com/yourusername/ai-chat-project.git
-cd ai-chat-project
+git clone https://github.com/yourusername/sample.git
+cd sample
 ```
 
-### 2. Set Up Dependencies
-- Ensure you have Java Development Kit (JDK) installed.
-- Use either Maven or Gradle for dependency management.
+### Setup Configuration
 
-### 3. Configure OpenAI Settings
-1. Create a file `application.properties` in the project root with the following content:
-```properties
-spring.application.name=ai-chat-app
-spring.threads.virtual.enabled=true
+1. Create a file named `application.properties` in the `src/main/resources` directory, and add your OpenAI API key:
 
-## OpenAI Configuration
-spring.ai.openai.base-url=http://localhost:8989/openai
-spring.ai.openai.api-key=${OPENAI_API_KEY}
-spring.ai.openai.chat.options.model=gpt-4o-mini
+```
+spring.ai.openai.api-key=YOUR_OPENAI_API_KEY
 ```
 
-### 4. Install Tools
-- Spring Boot Toolchain (Maven or Gradle)
-- OpenAI Java API Client
+### Build the Project
 
-### 5. Run the Application
+Run the following command to build the project:
+
+```bash
+mvn clean install
+```
+
+### Run the Application
+
+You can run the application using the command:
+
 ```bash
 mvn spring-boot:run
 ```
 
-## Usage Guide
+### Access the CLI
+
+Once the application is running, open a terminal window and interact with the AI assistant by asking questions in the prompt provided in the CLI.
+
+### Contribute
+
+Feel free to fork the repository, make improvements or report issues.
+
+---
+
+For more information on setting up Spring Boot applications or managing dependencies with Maven, refer to the [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) and [Maven Documentation](https://maven.apache.org/guides/index.html).
+```
 
 ### via Command Line
 1. Start the application.
