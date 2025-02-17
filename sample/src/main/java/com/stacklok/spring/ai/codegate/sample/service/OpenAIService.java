@@ -4,7 +4,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface OpenAIService {
+
+
     
-    String getModelResponse(String prompt);
+    String getAnswer(String prompt);
     
 }
