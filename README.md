@@ -1,5 +1,4 @@
 
-<img src="sample/src/main/resources/img.jpeg" alt="AI Image" width="800" height="400">
 
 ---
 # ✨ Spring AI app with AI Privacy Gateway via CodeGate
