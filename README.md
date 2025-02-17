@@ -83,9 +83,7 @@ mvn clean install
 
 ## Install CodeGate
 
-
-These instructions assume the `docker` CLI is available. If you use Podman,
-replace `docker` with `podman` in all commands.
+Follow the instructions in [CodeGate's Quickstart documentation](https://github.com/stacklok/codegate?tab=readme-ov-file#-quickstart)
 
 ### Installation
 
