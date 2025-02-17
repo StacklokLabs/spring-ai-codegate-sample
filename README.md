@@ -62,7 +62,7 @@ arm64 (ARM and Apple Silicon) CPU architectures.
 ## Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/sample.git
+git clone [https://github.com/yourusername/sample.git](https://github.com/StacklokLabs/spring-ai-codegate-sample.git)
 cd sample
 ```
 
